@@ -1,0 +1,3 @@
+﻿  GameLoop.cpp
+c:\users\ccooke\documents\personal backup\snhu\b.a. computer science\computer science\ccooke_finalproject_lcr\ccooke_finalproject_lcr\die.h(12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  ccooke_FinalProject_LCR.vcxproj -> C:\Users\ccooke\Documents\Personal Backup\SNHU\B.A. Computer Science\Computer Science\ccooke_FinalProject_LCR\Debug\ccooke_FinalProject_LCR.exe
