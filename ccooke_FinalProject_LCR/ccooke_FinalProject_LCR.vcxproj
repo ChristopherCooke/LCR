@@ -156,10 +156,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Die.h" />
-    <ClInclude Include="GameActions.h" />
     <ClInclude Include="GameLoop.h" />
+    <ClInclude Include="GameManager.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="StateGameOver.h" />
+    <ClInclude Include="StateMachine.h" />
+    <ClInclude Include="StateLegacyPlayerTurn.h" />
+    <ClInclude Include="StateMainMenu.h" />
+    <ClInclude Include="StatePlayerTurn.h" />
+    <ClInclude Include="StatePrintScores.h" />
+    <ClInclude Include="StateSetupPlayers.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="_State.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
