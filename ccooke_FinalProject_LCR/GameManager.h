@@ -5,8 +5,7 @@
 
 class GameManager {
 	
-	int current_player, winning_player_index;
-	int player_count = INVALID;	
+	
 	Player dummy_player = Player();
 	std::string empty;
 	bool shouldEnd = false;
@@ -15,6 +14,8 @@ class GameManager {
 
 	public:
 		const int STARTING_CHIPS = 3, INVALID = -1, DIE_COUNT = 3, MIN_PLAYERS = 3;
+		int current_player, winning_player_index;
+		int player_count = INVALID;
 		int winning_chip_count;
 		void Set_Player_Count(int count) {
 			player_count = count;
@@ -25,6 +26,11 @@ class GameManager {
 		}
 		void Create_Players_Array() {
 			players = new Player[player_count];
+			for (int x = 0; x < player_count; x++) {
+				Player player = Player();
+				players[x] = player;
+
+			}
 			current_player = 0;
 			winning_chip_count = player_count * STARTING_CHIPS;	//Denote the chips needed to win
 			winning_player_index = INVALID;
@@ -35,8 +41,8 @@ class GameManager {
 		Player* Get_Players() {
 			return players;
 		}
-		Player Get_Player(int index) {
-			return players[index];
+		Player* Get_Player(int index) {
+			return &players[index];
 		}
 		int Get_Player_Count() {
 			return player_count;

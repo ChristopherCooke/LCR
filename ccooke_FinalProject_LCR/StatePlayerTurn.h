@@ -1,10 +1,9 @@
 #pragma once
+
 #include "_State.h"
 #include "Player.h"
 #include "Die.h"
-#include "stdafx.h"
 #include "StateGameOver.h"
-#include "StatePrintScores.h"
 
 class StatePlayerTurn : public _State {
 
@@ -26,12 +25,12 @@ public:
 		return -1;
 	}
 	
-	int Get_Next_Player() {
+	void Get_Next_Player() {
 		Player* players = this->game_manager->Get_Players();
 		int player_count = this->game_manager->Get_Player_Count();
 		int player_index = this->game_manager->Get_Current_Player_Index();
-		if (player_index++ < player_count) {
-			this->game_manager->Set_Current_Player_Index(player_index + 1);
+		if (++player_index < player_count) {
+			this->game_manager->Set_Current_Player_Index(player_index);
 		}
 		else {
 			this->game_manager->Set_Current_Player_Index(0);
@@ -110,13 +109,15 @@ public:
 		system("cls");
 
 		if (CheckWin() == -1) {
-			//Get_Next_Player();
-			//StatePrintScores* state = new StatePrintScores(this->machine_ref, this->game_manager);
-			//this->machine_ref->Set_Next_State(state);
+			Get_Next_Player();
+			StateMachine* machine = this->machine_ref;
+			machine->Set_Next_State(machine->Get_Circular_State());
 		}
 		else {
 			StateGameOver* state = new StateGameOver(this->machine_ref, this->game_manager);
 			this->machine_ref->Set_Next_State(state);
+			this->machine_ref->Set_Game_Over(true);
+			this->machine_ref->Get_Gm()->winning_player_index = player_index;
 		}
 	}
 };

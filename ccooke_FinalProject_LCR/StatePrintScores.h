@@ -37,6 +37,6 @@ public:
 		std::cout << "\n-----------------------------------------------------------\n";
 
 		StatePlayerTurn* state = new StatePlayerTurn(this->machine_ref, this->game_manager);
-		machine->Set_Next_State(state);
+		this->machine_ref->Set_Next_State(state);
 	}
 };
