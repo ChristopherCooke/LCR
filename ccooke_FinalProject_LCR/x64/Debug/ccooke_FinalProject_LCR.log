@@ -4,5 +4,4 @@ c:\wamp64\www\lcr\ccooke_finalproject_lcr\statemachine.h(5): warning C4067: unex
 c:\wamp64\www\lcr\ccooke_finalproject_lcr\statemainmenu.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 c:\wamp64\www\lcr\ccooke_finalproject_lcr\statemainmenu.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 c:\wamp64\www\lcr\ccooke_finalproject_lcr\statemainmenu.h(5): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-c:\wamp64\www\lcr\ccooke_finalproject_lcr\statesetupplayers.h(36): error C2446: '==': no conversion from 'int' to 'int *'
-  c:\wamp64\www\lcr\ccooke_finalproject_lcr\statesetupplayers.h(36): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
+  ccooke_FinalProject_LCR.vcxproj -> C:\wamp64\www\LCR\x64\Debug\ccooke_FinalProject_LCR.exe
