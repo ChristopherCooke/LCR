@@ -36,15 +36,28 @@ public:
 			
 		} while (gm->player_count == gm->INVALID);
 
-		gm->Create_Players_Array();
+		//gm->Create_Players_Array();
+		gm->Initialize_Players();
 		std::cout << std::endl << std::endl;
 		std::cin.clear();
 		std::cin.clear();	//Me cheating to flush the buffer
 
-		//Set starting chips for each player
-		for (int x = 0; x < gm->Get_Player_Count(); x++) {
-			gm->Get_Player(x)->SetChips(3);
-		}
+		
+		Player* nextplayer = gm->Get_Players();
+		do {
+			Player* currentplayer = nextplayer;
+			currentplayer->SetChips(3);
+			cout << "Enter Player Name: ";
+			string name;
+			cin >> name;
+			currentplayer->SetName(name);
+
+			nextplayer = currentplayer->GetNextPlayer();
+		} while (nextplayer != NULL);
+		////Set starting chips for each player
+		//for (int x = 0; x < gm->Get_Player_Count(); x++) {
+		//	gm->Get_Player(x)->SetChips(3);
+		//}
 	}
 	void execute_state() {
 		

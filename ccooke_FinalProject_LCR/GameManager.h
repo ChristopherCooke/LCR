@@ -11,10 +11,12 @@ class GameManager {
 	bool shouldEnd = false;
 	Player* players;
 	Die* dice;
+	Player* lastplayer;
 
 	public:
 		const int STARTING_CHIPS = 3, INVALID = -1, DIE_COUNT = 3, MIN_PLAYERS = 3;
-		int current_player, winning_player_index;
+		Player* winning_player;
+		Player* current_player;
 		int player_count = INVALID;
 		int winning_chip_count;
 		void Set_Player_Count(int count) {
@@ -33,7 +35,32 @@ class GameManager {
 			}
 			current_player = 0;
 			winning_chip_count = player_count * STARTING_CHIPS;	//Denote the chips needed to win
-			winning_player_index = INVALID;
+			winning_player = nullptr;
+		}
+		void Initialize_Players() {
+			winning_chip_count = player_count * STARTING_CHIPS;	//Denote the chips needed to win
+			winning_player = nullptr;
+			Player* lastref = nullptr;
+
+			//Setup linked list of players
+			for (int x = 0; x < player_count; x++) {
+				if (x == 0) {	//First player
+					players = new Player();
+					current_player = players;
+					lastref = players;
+				}
+				else {
+					Player* newplayer = new Player();
+					lastref->SetNextPlayer(newplayer);					
+					newplayer->SetPreviousPlayer(lastref);
+					lastplayer = newplayer;
+					lastref = newplayer;
+				}
+			}
+		}
+
+		Player* Get_Last_Player() {
+			return lastplayer;
 		}
 		bool Get_Game_Over() {
 			return shouldEnd;
@@ -50,10 +77,10 @@ class GameManager {
 		int* Get_Player_Count_Ref() {
 			return &player_count;
 		}
-		void Set_Current_Player_Index(int index) {
-			current_player = index;
+		void Set_Current_Player(Player* player) {
+			current_player = player;
 		}
-		int Get_Current_Player_Index() {
+		Player* Get_Current_Player() {
 			return current_player;
 		}
 		Player* Get_Dummy_Player() {
@@ -71,7 +98,7 @@ class GameManager {
 		Die* Get_Dice() {
 			return dice;
 		}
-		int Get_Winning_Player_Index() {
-			return winning_player_index;
+		Player* Get_Winning_Player() {
+			return winning_player;
 		}
 };
