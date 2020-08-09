@@ -26,6 +26,7 @@ class GameManager {
 			if (player_count >= MIN_PLAYERS) return true;
 			return false;
 		}
+		//Legacy
 		void Create_Players_Array() {
 			players = new Player[player_count];
 			for (int x = 0; x < player_count; x++) {

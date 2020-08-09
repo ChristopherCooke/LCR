@@ -32,6 +32,12 @@ public:
 
 		else cout << "Unable to locate " << filename << endl << endl;
 	}
+
+	void DisplayRecordedScores() 
+	{
+		OutputFile("scores.csv");
+	}
+
 	//Welcome the player
 	void DisplayRules()
 	{
@@ -44,6 +50,7 @@ public:
 		cout << "\nOptions - Please choose from the following" << endl << endl;
 		cout << "1. Play Game" << endl;
 		cout << "2. Read Rules" << endl;
+		cout << "3. High Scores" << endl;
 	}
 
 	//Gather player input
@@ -58,7 +65,8 @@ public:
 		do {
 			DisplayMenu();
 			GetPlayerInput(selection);
-			if (selection == "1") {
+			switch (stoi(selection)) {
+			case 1:
 				system("cls");
 				cout << endl << "Loading Game";
 				for (int x = 0; x < 10; x++) {
@@ -67,8 +75,8 @@ public:
 				}
 				cout << endl << endl;
 				system("cls");
-			}
-			else if (selection == "2") {
+				break;
+			case 2:
 				system("cls");
 				DisplayRules();
 				Sleep(1000);
@@ -76,9 +84,19 @@ public:
 				getchar();
 				getchar();
 				system("cls");
-			}
-			else {
+				break;
+			case 3:
+				system("cls");
+				DisplayRecordedScores();
+				Sleep(1000);
+				cout << "\nPress enter to continue...";
+				getchar();
+				getchar();
+				system("cls");
+				break;
+			default:
 				cout << "Invalid selection! Please try again." << endl << endl;
+				break;
 			}
 		} while (selection != "1");
 

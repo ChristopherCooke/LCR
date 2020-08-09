@@ -123,7 +123,9 @@ public:
 		std::cin.clear();
 		system("cls");
 
-		if (CheckWin() == NULL) {
+		Player* winner = CheckWin();
+
+		if (winner == NULL) {
 			Get_Next_Player();
 			StateMachine* machine = this->machine_ref;
 			machine->Set_Next_State(machine->Get_Circular_State());
@@ -132,7 +134,7 @@ public:
 			StateGameOver* state = new StateGameOver(this->machine_ref, this->game_manager);
 			this->machine_ref->Set_Next_State(state);
 			this->machine_ref->Set_Game_Over(true);
-			this->machine_ref->Get_Gm()->winning_player = this->machine_ref->Get_Gm()->Get_Current_Player();
+			this->machine_ref->Get_Gm()->winning_player = winner;
 		}
 	}
 };
