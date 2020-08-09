@@ -97,7 +97,7 @@ public:
 		//Temporarily just append new score to file
 		append_to_file(newscore.GetFormattedRecord(), "scores.csv");
 
-		Sleep(10000);
+		Sleep(6000);
 		system("cls");
 	}
 };
