@@ -159,6 +159,7 @@
     <ClInclude Include="GameLoop.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Score.h" />
     <ClInclude Include="StateGameOver.h" />
     <ClInclude Include="StateMachine.h" />
     <ClInclude Include="StateLegacyPlayerTurn.h" />

@@ -4,4 +4,6 @@ c:\wamp64\www\lcr\ccooke_finalproject_lcr\statemachine.h(5): warning C4067: unex
 c:\wamp64\www\lcr\ccooke_finalproject_lcr\statemainmenu.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 c:\wamp64\www\lcr\ccooke_finalproject_lcr\statemainmenu.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 c:\wamp64\www\lcr\ccooke_finalproject_lcr\statemainmenu.h(5): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\wamp64\www\lcr\ccooke_finalproject_lcr\stategameover.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\wamp64\www\lcr\ccooke_finalproject_lcr\score.h(20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   ccooke_FinalProject_LCR.vcxproj -> C:\wamp64\www\LCR\x64\Debug\ccooke_FinalProject_LCR.exe
