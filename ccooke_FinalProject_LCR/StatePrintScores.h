@@ -19,6 +19,7 @@ public:
 		GameManager* gm = machine->Get_Gm();
 		int player_count = gm->Get_Player_Count();
 		Player* players = gm->Get_Players();
+		Player* nextplayer = players;
 
 		//Print score header
 		std::cout << "\n---------------------------Scores---------------------------\n";
@@ -29,10 +30,12 @@ public:
 
 		//Print scores
 		std::cout << "\n-----------------------------------------------------------\n";
-		for (int score_index = 0; score_index < player_count; score_index++) {
-			
-			std::cout << players[score_index].GetChips() << "\t\t";
-		}
+
+		do {
+			int chipcount = nextplayer->GetChips();
+			nextplayer = nextplayer->GetNextPlayer();
+			std::cout << chipcount << "\t\t";
+		} while (nextplayer != NULL);
 		std::cout << ((player_count * gm->STARTING_CHIPS) - gm->winning_chip_count);
 		std::cout << "\n-----------------------------------------------------------\n";
 

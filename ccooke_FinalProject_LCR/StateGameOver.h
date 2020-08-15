@@ -13,6 +13,6 @@ public:
 	
 	void execute_state() {
 		//Display Winner
-		std::cout << "Winning player is: Player " << this->machine_ref->Get_Gm()->Get_Winning_Player_Index() + 1;
+		std::cout << "Winning player is: Player " << this->machine_ref->Get_Gm()->Get_Winning_Player()->GetName();
 	}
 };
