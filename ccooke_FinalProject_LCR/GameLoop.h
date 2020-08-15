@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Player.h"
-#include "GameActions.h"
 /*
 	Problem Statement
 	You are playing a card game with friends and decide that you want to keep track of the scores after each round.
@@ -15,16 +14,6 @@
 
 class Game
 {
-private:
-	Player m_player;
-
-	void DisplayRules();
-	void DisplayTitle();
-	void DisplayMenu();
-	void PromptInput();
-	void GetPlayerInput(std::string& playerInput) const;
-	void PerformAction(GameActions& c_action, int& integer, Player& player, std::string toWrite) const;
-	int CheckWin(Player* players, int& player_count, int& winning_chip_count);
 public:
 	void RunGame();
 };
