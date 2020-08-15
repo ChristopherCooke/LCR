@@ -1,0 +1,7 @@
+﻿  GameLoop.cpp
+c:\wamp64\www\lcr\ccooke_finalproject_lcr\die.h(12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\wamp64\www\lcr\ccooke_finalproject_lcr\statemachine.h(5): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\wamp64\www\lcr\ccooke_finalproject_lcr\statemainmenu.h(3): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\wamp64\www\lcr\ccooke_finalproject_lcr\statemainmenu.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\wamp64\www\lcr\ccooke_finalproject_lcr\statemainmenu.h(5): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  ccooke_FinalProject_LCR.vcxproj -> C:\wamp64\www\LCR\x64\Debug\ccooke_FinalProject_LCR.exe
